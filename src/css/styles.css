@@ -25,6 +25,19 @@ input::placeholder {
   box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.1);
 }
 
-span {
+span,
+.errormsg {
   color: hsl(345.98, 96.83%, 49.41%);
+}
+
+@media (min-width: 300px) {
+  .displayed--information--container > div {
+    width: 100%;
+  }
+}
+
+@media (min-width: 976px) {
+  .displayed--information--container > div {
+    width: calc(100% / 4);
+  }
 }

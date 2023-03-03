@@ -280,6 +280,10 @@ img, video {
   z-index: 50;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .flex {
   display: flex;
 }
@@ -290,6 +294,10 @@ img, video {
 
 .h-12 {
   height: 3rem;
+}
+
+.h-\[100px\] {
+  height: 100px;
 }
 
 .h-\[40vh\] {
@@ -371,9 +379,8 @@ img, video {
   background-repeat: no-repeat;
 }
 
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
+.p-\[20px\] {
+  padding: 20px;
 }
 
 .px-4 {
@@ -384,11 +391,6 @@ img, video {
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-}
-
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
 }
 
 .text-center {
@@ -457,8 +459,20 @@ body, input::placeholder {
   box-shadow: 3px 3px 5px 3px #0000001a;
 }
 
-span {
+span, .errormsg {
   color: #f8043d;
+}
+
+@media (min-width: 300px) {
+  .displayed--information--container > div {
+    width: 100%;
+  }
+}
+
+@media (min-width: 976px) {
+  .displayed--information--container > div {
+    width: 25%;
+  }
 }
 
 .hover\:bg-darkGray:hover {
@@ -485,22 +499,16 @@ span {
     flex-direction: row;
   }
 
+  .lg\:items-start {
+    align-items: flex-start;
+  }
+
   .lg\:justify-around {
     justify-content: space-around;
   }
 
   .lg\:gap-\[3rem\] {
     gap: 3rem;
-  }
-
-  .lg\:px-0 {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .lg\:px-2 {
-    padding-left: .5rem;
-    padding-right: .5rem;
   }
 
   .lg\:text-left {

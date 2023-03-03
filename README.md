@@ -14,7 +14,6 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -31,25 +30,16 @@ Your users should be able to:
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
----
-
-⚠️ **IMPORTANT** ⚠️: To use the IP Geolocation API by IPify, you'll need to sign up for a free account. You won't need to add any cards details to do this and it's a very quick process. This will generate an API Key for you. Usually, you would be able to restrict your API Key to a specific URL (your own domain). This makes sure that other people can't use your API Key on their own websites. IPify doesn't have this feature, but because you aren't adding your card details, this isn't an issue. **So be sure to only sign up for the free account and DO NOT enter any card details**.
-
-For the mapping API, we recommend using [LeafletJS](https://leafletjs.com/). It's free to use and doesn't require an API Key. If you decide to use another API, like Google Maps or Mapbox, be sure to secure your API Key. Here are guides for both Google Maps and Mapbox, be sure to read through them thoroughly:
-
-- [API Key best practices from Google Developers](https://developers.google.com/maps/api-key-best-practices)
-- [How to use Mapbox securely](https://docs.mapbox.com/help/troubleshooting/how-to-use-mapbox-securely/)
-
-Exposing your API Key publicly can lead to other people using it to make requests for their own application if the proper precautions aren't in place. Please be sure you read the guides thoroughly and follow their recommendations.
-
 ### Screenshot
 
-![](./screenshot.jpg)
+![](<./src/screenshots/Screenshot%20(133).png>)
+![](<./src/screenshots/Screenshot%20(134).png>)
+![](<./src/screenshots/Screenshot%20(135).png>)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/ip-address-tracking-web-app-built-using-tailwind-parcel-and-vanillajs-VunaJaQWJahttps://your-solution-url.com)
+- Live Site URL: [Live site URL here](https://iptrackify.netlify.app/)
 
 ## My process
 
@@ -60,40 +50,28 @@ Exposing your API Key publicly can lead to other people using it to make request
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [Tailwind](https://tailwindcss.com/docs/installation) - CSS framework, helped built the webpage much faster and easier.
+- [Parcel](https://parceljs.org/) - Build Tool for compiling and minifying my html,css and js codes
+- Vanilla JS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+If there's one thing I haven't tried with making ajax calls using fetch, it's going to be the code I shared below, I used this in my project, enabling the client to either enter ipv4/ipv6 addresses such as `8.8.8.8 or 152.156.12.122` and even domain names such as 'google.com or twitter.com` and for either of both entered it makes a different fetch request.
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_w0JxSbeKjw3jQ3b2M2jm9q1V7MyAl${value ? `&ipAddress=${value}` : ""}${domain ? `&domain=${domain}` : ""}`);
 ```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I want to keep getting better in what I do, I'm yet to attain my possible best, I also for the first time worked with parcel in this project, it helped minified my code. And with the little experience I have building websites many years back using sites builders like wordpress and wix, I've learnt that a minified websites definitely reduces load times. And that's very crucial in any web development project.
+
+I'm yet to fully get the hang of it, but I'll definitely get the hang of it pretty soon.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Ipify](https://www.ipify.org/) - ipify API is a simple public IP address API, easy enough to integrate into any application in seconds.
+- [Leaflet](https://leafletjs.com/) - Leaflet is the leading open-source JavaScript library for mobile-friendly interactive maps. Weighing just about 42 KB of JS.
 
 ## Author
 

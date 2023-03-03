@@ -557,6 +557,7 @@ function hmrAccept(bundle, id) {
 }
 
 },{}],"dUn2x":[function(require,module,exports) {
+if (module.hot) module.hot.accept();
 const mapContainer = document.getElementById("map");
 const ipAddress = document.querySelector(".ipAddress");
 const locationEl = document.querySelector(".location");
@@ -568,6 +569,8 @@ const ipAddressContainer = document.querySelector(".ip--container");
 const locationContainer = document.querySelector(".location--container");
 const timezoneContainer = document.querySelector(".timezone--container");
 const ispContainer = document.querySelector(".isp--container");
+const container = document.querySelector(".displayed--information--container");
+let paragraph = document.querySelector(".errormsg");
 let popup = "Your current location\uD83D\uDCCC";
 let lat;
 let lng;
@@ -579,6 +582,8 @@ const executeCode = ()=>{
     locationContainer.classList.add("hidden");
     timezoneContainer.classList.add("hidden");
     ispContainer.classList.add("hidden");
+    paragraph.classList.add("hidden");
+    container.classList.remove("h-[100px]");
     const value = input.value;
     if (!value) return;
     if (validIpTest.test(value)) fetchData(value, "");
@@ -614,7 +619,11 @@ const fetchData = async (value, domain)=>{
     try {
         document.querySelector(".loading-element").classList.remove("hidden");
         const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_w0JxSbeKjw3jQ3b2M2jm9q1V7MyAl${value ? `&ipAddress=${value}` : ""}${domain ? `&domain=${domain}` : ""}`);
-        if (!res.ok) throw new Error(`Please make sure you're connected to the internet and try again!`);
+        if (!res.ok) {
+            paragraph.classList.remove("hidden");
+            container.classList.add("h-[100px]");
+            throw new Error(`Something went wrong, please make sure you inputted the correct search query and check your internet connection!`);
+        }
         const data = await res.json();
         // remove the container hidden classes
         ipAddressContainer.classList.remove("hidden");
