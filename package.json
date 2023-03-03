@@ -4,14 +4,14 @@
   "description": "This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/css/styles.css -o ./src/dist/styles.css",
-    "watch": "tailwindcss -i ./src/css/styles.css -o ./src/dist/styles.css --watch",
-    "start": "parcel index.html"
+    "start": "parcel src/index.html"
   },
   "keywords": [],
   "author": "Abdullah Ayoola",
   "license": "ISC",
   "devDependencies": {
+    "parcel": "^2.8.3",
+    "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.4",
     "tailwindcss": "^3.2.7"
