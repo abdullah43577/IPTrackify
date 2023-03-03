@@ -59,7 +59,7 @@ Your users should be able to:
 If there's one thing I haven't tried with making ajax calls using fetch, it's going to be the code I shared below, I used this in my project, enabling the client to either enter ipv4/ipv6 addresses such as `8.8.8.8 or 152.156.12.122` and even domain names such as 'google.com or twitter.com` and for either of both entered it makes a different fetch request.
 
 ```js
-const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_w0JxSbeKjw3jQ3b2M2jm9q1V7MyAl${value ? `&ipAddress=${value}` : ""}${domain ? `&domain=${domain}` : ""}`);
+const res = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=myIP...${value ? `&ipAddress=${value}` : ""}${domain ? `&domain=${domain}` : ""}`);
 ```
 
 ### Continued development
